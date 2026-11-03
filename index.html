@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farhang Shamsoddin</title>
+<meta name="description" content="Farhang Shamsoddin, PhD in Economics, University of Toronto. Industrial organization, competition policy, and public policy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout: fixed identity column on the left, one reading column on the right; stacks on phones. */
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --ink: #1b2330;
+  --muted: #5a6578;
+  --rule: #dde1e8;
+  --accent: #1f4e79;
+  --accent-soft: #e6eef6;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161d;
+    --surface: #1a1f28;
+    --ink: #e4e8ee;
+    --muted: #9aa4b4;
+    --rule: #2c3340;
+    --accent: #8db8e3;
+    --accent-soft: #1e2a3a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161d;
+  --surface: #1a1f28;
+  --ink: #e4e8ee;
+  --muted: #9aa4b4;
+  --rule: #2c3340;
+  --accent: #8db8e3;
+  --accent-soft: #1e2a3a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 56px;
+}
+
+/* Identity column */
+.id { align-self: start; display: flex; flex-direction: column; gap: 20px; }
+.photo { width: 100%; max-width: 220px; aspect-ratio: 640 / 736; object-fit: cover; border-radius: 4px; display: block; }
+.id h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+.id .role { color: var(--muted); margin: 0; font-size: 0.95rem; }
+.id .market {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+.contact { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.92rem; }
+.contact .label { color: var(--muted); display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  width: fit-content;
+}
+.btn:hover { background: var(--accent-soft); }
+nav.toc { display: flex; flex-direction: column; gap: 4px; font-size: 0.92rem; border-top: 1px solid var(--rule); padding-top: 16px; }
+nav.toc a { color: var(--muted); text-decoration: none; }
+nav.toc a:hover { color: var(--accent); }
+
+/* Main column */
+main { display: flex; flex-direction: column; gap: 52px; max-width: 680px; }
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 32px; }
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+p { margin: 0; }
+.lede { font-size: 1.05rem; }
+.fields { color: var(--muted); font-size: 0.92rem; }
+
+.paper { display: flex; flex-direction: column; gap: 8px; }
+.paper.jmp {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  padding: 20px 22px;
+  border-radius: 4px;
+}
+.tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.paper h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; line-height: 1.35; margin: 0; text-wrap: balance; }
+.paper .meta { color: var(--muted); font-size: 0.9rem; }
+.paper .abstract { font-size: 0.96rem; }
+.paper .links { display: flex; gap: 16px; font-size: 0.9rem; }
+.stack { display: flex; flex-direction: column; gap: 28px; }
+
+.rows { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.rows li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; }
+.rows .when { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.92rem; }
+
+.refs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+.ref { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 14px 16px; font-size: 0.92rem; }
+.ref strong { display: block; font-weight: 600; }
+.ref span { color: var(--muted); }
+.ref a { overflow-wrap: anywhere; font-size: 0.88rem; }
+
+footer { color: var(--muted); font-size: 0.82rem; border-top: 1px solid var(--rule); padding-top: 16px; }
+
+.plain { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+
+@media (max-width: 820px) {
+  .wrap { grid-template-columns: 1fr; gap: 40px; padding: 32px 18px 60px; }
+  .id { position: static; }
+  .photo { max-width: 180px; }
+  nav.toc { flex-direction: row; flex-wrap: wrap; gap: 6px 16px; }
+}
+@media (max-width: 440px) {
+  .rows li { grid-template-columns: 1fr; gap: 0; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <aside class="id">
+    <img class="photo" src="photo.jpg" alt="Farhang Shamsoddin">
+    <h1>Farhang Shamsoddin</h1>
+    <p class="role">PhD in Economics<br>Rotman School of Management, University of Toronto</p>
+    <span class="market">Available for full-time roles</span>
+    <ul class="contact">
+      <li><span class="label">Email</span><a href="mailto:farhang.shamsoddin@mail.utoronto.ca">farhang.shamsoddin@mail.utoronto.ca</a></li>
+      <li><span class="label">Location</span>Toronto, Ontario</li>
+      <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/farhang-shamsoddin/">linkedin.com/in/farhang-shamsoddin</a></li>
+    </ul>
+    <a class="btn" target="_blank" rel="noopener" href="files/Shamsoddin_CV.pdf">CV (PDF)</a>
+    <nav class="toc" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#policy">Professional work</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#education">Education</a>
+      <a href="#references">References</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p class="lede">I am an economist specializing in empirical industrial organization, applied econometrics, and competition policy. My research uses structural and reduced-form methods to study market power, productivity, and collusion, with a focus on questions relevant to competition policy.</p>
+      <p>My job market paper examines the misallocation caused by the bid-rigging cartel in Montreal&rsquo;s asphalt procurement market. I find that by steering contracts toward higher-cost firms, the cartel increased total production costs by 14.1 percent, and that this misallocation accounts for the majority (58.4 percent) of the cartel&rsquo;s price overcharge.</p>
+      <p>I received my PhD from the Rotman School of Management, University of Toronto, in August 2026.</p>
+      <p class="fields">Fields: Industrial organization, applied econometrics, competition policy</p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <div class="stack">
+
+        <article class="paper jmp">
+          <span class="tag">Job market paper</span>
+          <h3>The Misallocation Costs of Bid Rigging: Evidence from Montreal Asphalt Procurement Auctions</h3>
+          <p class="abstract">This paper examines the misallocation costs of collusion in public procurement auctions using cartel-period data from 2007&ndash;2009 on the Montreal asphalt cartel. I estimate firm-specific cost distributions nonparametrically from the post-cartel period and simulate competitive counterfactual outcomes for each cartel-period auction. First, I find that the cartel inflated average procurement prices by 24 percent. Second, the inefficient allocation of contracts in the cartel period increased total production costs by 14.1 percent. Third, decomposing the price overcharge, 58.4 percent is attributable to misallocation of contracts toward higher-cost firms and the remaining 41.6 percent to higher collusive markups. These findings suggest that in markets with substantial dispersion in firm productivity, inefficient allocation may be the primary channel through which bid-rigging harms public buyers.</p>
+          <div class="links"><a target="_blank" rel="noopener" href="files/Shamsoddin_JMP.pdf">Paper (PDF)</a></div>
+        </article>
+
+        <article class="paper">
+          <h3>Heterogeneity, Productivity and Reallocation: Evidence from the U.S. Cement Industry</h3>
+          <p class="abstract">This paper develops a structural model of spatial competition to estimate plant-level total factor productivity in the U.S. Portland cement industry, where market power makes standard production function approaches inconsistent. Using plant-level data from 1995 to 2007, I implement a simulation-based estimation framework that allows for both observable and unobservable sources of productivity heterogeneity. I find that there is notable productivity dispersion: plants in the top decile are on average 25% more productive than those in the bottom decile. Decomposing the sources of this dispersion, I find that observable factors, particularly kiln technology, account for approximately 95% of the variance in total factor productivity, leaving little role for unobserved plant-specific differences. A counterfactual carbon tax analysis exploits this technology heterogeneity to show that environmental regulation reallocates output toward cleaner plants, while disproportionately burdening carbon-intensive producers.</p>
+          <div class="links"><a target="_blank" rel="noopener" href="files/Shamsoddin_Cement_Productivity.pdf">Paper (PDF)</a></div>
+        </article>
+
+        <article class="paper">
+          <h3>Should We Share Our Cookies? The Effect of Data on Match Quality in Online Advertising</h3>
+          <p class="meta">With Mehdi Akhbari</p>
+          <p class="abstract">User data plays a central role in online advertising by enabling platforms to match ads to users more effectively. This paper quantifies how access to additional data affects match quality, measured by user click-through rates, and evaluates how data-driven mergers between platforms with complementary datasets influence market outcomes. Mergers improve match quality through two distinct mechanisms: (i) a precision effect, whereby a larger number of observations improves the accuracy of predicted click probabilities, and (ii) a targeting effect, whereby broader tracking of user behavior enhances the platform&rsquo;s ability to tailor ads to user preferences. The analysis utilizes the conditionally random allocation of ads in the data provided by Iran&rsquo;s largest online advertising platform and employs causal forest, a novel causal machine learning method, to estimate heterogeneous user click rates based on extensive browsing and ad exposure data from more than 1.6 million internet users. Simulations of user and platform behavior reveal that hypothetical mergers could boost match quality by 14&ndash;25%. In addition, this research finds that the majority of gains arise from an increase in the number of observations while expanding the set of observable user characteristics provides comparatively smaller gains.</p>
+          <div class="links"><a target="_blank" rel="noopener" href="files/Akhbari_Shamsoddin_Cookies.pdf">Paper (PDF)</a></div>
+        </article>
+
+        <article class="paper">
+          <h3>Heterogeneous Effects of Community-Based Interventions on Mental Health: Evidence from Catalonia</h3>
+          <p class="abstract">This paper evaluates the impact of an intersectoral public health policy implemented in Catalonia, aimed at improving population well-being through enhanced community engagement and the promotion of social activities. Leveraging regional variation in the intensity of policy implementation over time, I examine both the overall and heterogeneous relationship between policy exposure and a validated measure of mental health. The results find no significant association at the population level. However, I find that higher policy intensity is associated with improved mental health outcomes among immigrants and, to a lesser extent, young adults. The results have policy implications that can help increase the efficacy of similar interventions.</p>
+          <div class="links"><a target="_blank" rel="noopener" href="files/Shamsoddin_Catalonia_Mental_Health.pdf">Paper (PDF)</a></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="policy">
+      <h2>Professional work</h2>
+      <ul class="rows">
+        <li><span class="when">2022–2023</span><span>Research team member, University of Toronto, assisting the Competition Bureau of Canada with data analysis, interpretation, and writing on <a href="https://www.canada.ca/en/competition-bureau/news/2023/10/competition-bureau-report-finds-canadas-competitive-intensity-in-decline.html"><em>Competition in Canada from 2000 to 2020: An Economy at a Crossroads</em></a>, using Statistics Canada administrative firm-level data.</span></li>
+      </ul>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul class="rows">
+        <li><span class="when">2016–2024</span><span>I have served as a teaching assistant for many economics and MBA courses at the University of Toronto and Sharif University of Technology, including Industrial Organization, Game Theory, Microeconomics, Macroeconomics, Managerial Economics, Strategic Management, Decision Making with Models and Data, and Economics for Managerial Decision Making.</span></li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="rows">
+        <li><span class="when">2026</span><span><strong>PhD, Economics</strong>, Rotman School of Management, University of Toronto<br><span class="fields">Dissertation: Essays in Industrial Organization and Public Policy</span></span></li>
+        <li><span class="when">2018</span><span><strong>MA, Economics</strong>, Sharif University of Technology<br><span class="fields">Ranked 1st in cohort; Distinguished Student of the Year</span></span></li>
+        <li><span class="when">2016</span><span><strong>BSc, Mechanical Engineering</strong>, Sharif University of Technology</span></li>
+      </ul>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <div class="refs">
+        <div class="ref"><strong>Robert Clark</strong><span>Department of Economics<br>University of Toronto</span><br><a href="mailto:rob.clark@utoronto.ca">rob.clark@utoronto.ca</a></div>
+        <div class="ref"><strong>Bernardo Blum</strong><span>Rotman School of Management<br>University of Toronto</span><br><a href="mailto:bernardo.blum@rotman.utoronto.ca">bernardo.blum@rotman.utoronto.ca</a></div>
+        <div class="ref"><strong>Byung Soo Lee</strong><span>Rotman School of Management<br>University of Toronto</span><br><a href="mailto:byungsoo.lee@rotman.utoronto.ca">byungsoo.lee@rotman.utoronto.ca</a></div>
+      </div>
+    </section>
+
+    <footer>Last updated November 2026</footer>
+  </main>
+
+</div>
+</body>
+</html>
